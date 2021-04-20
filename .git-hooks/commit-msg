@@ -1,0 +1,6 @@
+#!/bin/sh
+MESSAGE=$1
+
+[ -z "$MESSAGE" ] && exit 0
+
+npx --no-install commitlint --edit $MESSAGE

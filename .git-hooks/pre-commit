@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# Colors
+NOCOLOR='\033[0m'
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+PURPLE='\033[0;35m'
+
+LINTER_EXIT_CODE=1
+
+STAGED_FILES=$(git diff --cached --diff-filter=d --name-only | grep -E '\.(js|vue)$')
+
+# Skip if there are no js or vue files
+[ -z "$STAGED_FILES" ] && exit 0
+
+# Run linters
+npx eslint $STAGED_FILES --fix
+LINTER_EXIT_CODE=$?
+
+git add -f $STAGED_FILES
+# Check the tsc exit code
+if [ $LINTER_EXIT_CODE -ne 0 ]; then
+  echo -e "🥵 ${RED}Linter errors have occurred"
+  sleep 1
+  exit 1
+else
+  echo -e "👍 ${GREEN}Eslint did not find any errors"
+  sleep 1
+fi
+
+# Return 0-exit code
+echo -e "🎉 ${PURPLE}All good to go \n"
+sleep 1
+exit 0

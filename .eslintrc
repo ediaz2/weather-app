@@ -1,0 +1,40 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "prettier",
+    "plugin:vue/vue3-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jest/recommended",
+    "plugin:testing-library/dom",
+    "plugin:testing-library/vue"
+  ],
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "parser": "@typescript-eslint/parser",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "testing-library",
+    "simple-import-sort",
+    "vue",
+    "@typescript-eslint",
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "no-console": "warn",
+    "no-debugger": "warn",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "vue/max-attributes-per-line": "off",
+    "vue/html-self-closing": "off",
+    "vue/singleline-html-element-content-newline": "off"
+  }
+}

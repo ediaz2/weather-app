@@ -1,0 +1,9 @@
+{
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "files.exclude": {
+    "node_modules": true,
+    ".vscode": true,
+    ".git-hooks": true
+  }
+}
