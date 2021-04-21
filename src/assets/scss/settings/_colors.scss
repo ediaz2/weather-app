@@ -1,0 +1,25 @@
+// Colors palette
+$_blue: #1e213a;
+$_blue-accent: #3c47e9;
+$_blue-gray: #a09fb1;
+$_blue-dark: #100e1d;
+$_gray: #6e707a;
+$_gray-lighter: #e7e7eb;
+$_white: #fff;
+$_yellow: #ffec65;
+
+// Colors applications
+$primary-color: $_blue;
+$primary-dark-color: $_blue-dark;
+
+$background-dark-color: $_blue-dark;
+$background-darker-color: $_blue-gray;
+$background-light-color: $_blue-gray;
+$background-lighter-color: $_white;
+
+$text-color: $_gray-lighter;
+$text-muted-color: $_blue-gray;
+$text-inverted-color: $_white;
+
+// $border-color: $_dove-gray;
+// $border-inverted-color: $_gallery;
