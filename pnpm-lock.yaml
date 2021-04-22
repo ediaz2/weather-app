@@ -31,7 +31,6 @@ specifiers:
   typescript: ^4.2.4
   vite: ^2.2.1
   vite-plugin-svg-icons: ^0.4.3
-  vite-svg-loader: ^1.5.1
   vue: ^3.0.5
   vue-eslint-parser: ^7.6.0
   vue-jest: ^5.0.0-alpha.7
@@ -71,7 +70,6 @@ devDependencies:
   typescript: 4.2.4
   vite: 2.2.1
   vite-plugin-svg-icons: 0.4.3_vite@2.2.1
-  vite-svg-loader: 1.5.1_vue@3.0.11
   vue-eslint-parser: 7.6.0_eslint@7.24.0
   vue-jest: 5.0.0-alpha.7_41fd49171c8a64f7bebd1e335539c8e6
   vue-tsc: 0.0.25
@@ -6509,14 +6507,6 @@ packages:
       vite: 2.2.1
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /vite-svg-loader/1.5.1_vue@3.0.11:
-    resolution: {integrity: sha512-ps06bbNYm5oaxr8FIW2xI36jjqpqoj/q7SYZoKAnxs1BXeBTQU+MA4Xvpg6WhHbupyDRDL/MCWnRCqWaIhyqGA==}
-    dependencies:
-      '@vue/compiler-sfc': 3.0.11_vue@3.0.11
-    transitivePeerDependencies:
-      - vue
     dev: true
 
   /vite/2.2.1:
