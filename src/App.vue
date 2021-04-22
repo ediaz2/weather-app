@@ -1,8 +1,8 @@
 <template>
-  <section class="o-container">
+  <div class="wrapper">
     <WeatherSidebar />
     <WeatherBody />
-  </section>
+  </div>
 </template>
 
 <script lang="ts">
@@ -19,3 +19,11 @@
     },
   });
 </script>
+
+<style lang="scss" scoped>
+  .wrapper {
+    display: grid;
+    grid-template-columns: 24rem 1fr;
+    height: 100vw;
+  }
+</style>

@@ -1,7 +1,6 @@
 @use "../settings/variables";
 
 body {
-    background-color: variables.$background-dark-color;
     color: variables.$text-color;
     font-family: variables.$font-family;
     font-size: variables.$fs-body;
