@@ -24,6 +24,10 @@
   .wrapper {
     display: grid;
     grid-template-columns: 24rem 1fr;
-    height: 100vw;
+    height: 100vh;
+
+    @media only screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
