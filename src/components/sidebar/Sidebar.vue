@@ -23,7 +23,8 @@
   @use "@/assets/scss/settings/_variables.scss";
 
   .weather-sidebar {
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
     background: variables.$background-darker-color;
   }
 </style>

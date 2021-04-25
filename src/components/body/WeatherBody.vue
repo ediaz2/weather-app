@@ -4,7 +4,13 @@
     <WeatherWeekCards />
     <WeatherHighCards />
     <div class="footer">
-      <span>created by @diaz268 - devChallenges.io</span>
+      <span>
+        created by
+        <a href="https://github.com/diaz268/weather-app" target="_blank">
+          @diaz268
+        </a>
+        - devChallenges.io
+      </span>
     </div>
   </section>
 </template>
