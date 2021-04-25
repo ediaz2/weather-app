@@ -1,6 +1,6 @@
 <template>
   <Container>
-    <div class="week-container">
+    <div class="week-wrapper">
       <WeatherWeekCardItem
         v-for="(item, index) in 5"
         :key="index"
@@ -25,10 +25,10 @@
 <style lang="scss" scoped>
   @use "@/assets/scss/settings/_variables.scss";
 
-  .week-container {
+  .week-wrapper {
     display: grid;
     grid-gap: variables.$spacing;
-    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
     gap: variables.$spacing;
   }
 </style>

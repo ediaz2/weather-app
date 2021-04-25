@@ -1,7 +1,7 @@
 <template>
   <Box>
     <h5 class="week__title">{{ info.title }}</h5>
-    <svg-icon class="week__icon" :name="info.icon"></svg-icon>
+    <svg-icon class="week__icon" :name="info.icon" />
     <div class="week__meta">
       <span>16 °C</span>
       <span>11 °C</span>
@@ -36,17 +36,14 @@
       line-height: 1.3;
       text-align: center;
     }
-
     &__icon {
       display: block;
-      width: calc(100% + 2rem);
-      margin: -1rem -1rem 0;
+      width: 100%;
+      margin: -2.2rem 0 -1rem;
     }
-
     &__meta {
       display: grid;
       grid-template-columns: 1fr 1fr;
-
       & span:nth-last-child(1) {
         color: variables.$text-muted-color;
       }

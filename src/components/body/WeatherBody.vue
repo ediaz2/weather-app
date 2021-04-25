@@ -1,18 +1,24 @@
 <template>
   <section class="weather-body">
+    <WeatherMeasurement />
     <WeatherWeekCards />
-    <h2>Today's Hightlights</h2>
+    <WeatherHighCards />
+    <div class="footer">
+      <span>created by @diaz268 - devChallenges.io</span>
+    </div>
   </section>
 </template>
 
 <script lang="ts">
   import { defineComponent } from 'vue';
 
+  import WeatherHighCards from '@/components/body/WeatherHighCards.vue';
+  import WeatherMeasurement from '@/components/body/WeatherMeasurement.vue';
   import WeatherWeekCards from '@/components/body/WeatherWeekCards.vue';
 
   export default defineComponent({
     name: 'WeatherBody',
-    components: { WeatherWeekCards },
+    components: { WeatherWeekCards, WeatherHighCards, WeatherMeasurement },
   });
 </script>
 
@@ -21,5 +27,8 @@
 
   .weather-body {
     background-color: variables.$background-dark-color;
+  }
+  .footer {
+    text-align: center;
   }
 </style>

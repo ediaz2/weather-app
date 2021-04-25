@@ -1,0 +1,100 @@
+<template>
+  <Container>
+    <h2>Today's Highlights</h2>
+    <div class="high-wrapper">
+      <Box>
+        <h5 class="high_title">Wind Status</h5>
+        <div class="high_info">
+          <span>7</span>
+          <span>mph</span>
+        </div>
+        <div class="high_icon_container">
+          <Pill sm> <svg-icon name="nearMe" /></Pill>
+          <span>WSW</span>
+        </div>
+      </Box>
+      <Box>
+        <h5 class="high_title">Humidity</h5>
+        <div class="high_info">
+          <span>84</span>
+          <span>%</span>
+        </div>
+        <ProgressBar :value="80" />
+      </Box>
+      <Box>
+        <h5 class="high_title">Visibility</h5>
+        <div class="high_info">
+          <span>6,4</span>
+          <span>miles</span>
+        </div>
+      </Box>
+      <Box>
+        <h5 class="high_title">Air Pressure</h5>
+        <div class="high_info">
+          <span>998</span>
+          <span>mb</span>
+        </div>
+      </Box>
+    </div>
+  </Container>
+</template>
+
+<script lang="ts">
+  import { defineComponent } from 'vue';
+
+  import Box from '@/components/ui/atoms/Box.vue';
+  import Pill from '@/components/ui/atoms/Pill.vue';
+  import ProgressBar from '@/components/ui/atoms/ProgressBar.vue';
+  import Container from '@/components/ui/objects/Container.vue';
+
+  export default defineComponent({
+    name: 'WeatherHighCards',
+    components: { Box, Container, ProgressBar, Pill },
+  });
+</script>
+
+<style lang="scss" scoped>
+  @use "@/assets/scss/settings/_variables.scss";
+
+  .high {
+    &-wrapper {
+      display: grid;
+      grid-gap: variables.$spacing;
+      grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+      gap: variables.$spacing * 1.5;
+    }
+    &_title {
+      margin: 0.2rem;
+      font-size: variables.$fs-lead;
+      font-weight: 400;
+      line-height: 1.2;
+      text-align: center;
+    }
+    &_icon_container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 1rem;
+      & span {
+        padding-left: 0.3rem;
+      }
+      & svg {
+        height: inherit;
+        transform: rotate(180deg);
+        fill: variables.$background-lighter-color;
+      }
+    }
+    &_info {
+      margin: 0.2rem;
+      font-size: variables.$fs-title-xl;
+      font-weight: 600;
+      line-height: 1.2;
+      text-align: center;
+      & span:nth-last-child(1) {
+        padding-left: 0.3rem;
+        font-size: variables.$fs-title-m;
+        font-weight: 400;
+      }
+    }
+  }
+</style>
