@@ -1,8 +1,8 @@
 <template>
   <section class="weather-body">
-    <WeatherMeasurement />
-    <WeatherWeekCards />
-    <WeatherHighCards />
+    <BodyMeasureCards />
+    <BodyWeekCards />
+    <BodyHighCards />
     <div class="footer">
       <span>
         created by
@@ -18,13 +18,13 @@
 <script lang="ts">
   import { defineComponent } from 'vue';
 
-  import WeatherHighCards from '@/components/body/WeatherHighCards.vue';
-  import WeatherMeasurement from '@/components/body/WeatherMeasurement.vue';
-  import WeatherWeekCards from '@/components/body/WeatherWeekCards.vue';
+  import BodyHighCards from '@/components/body/BodyHighCards.vue';
+  import BodyMeasureCards from '@/components/body/BodyMeasureCards.vue';
+  import BodyWeekCards from '@/components/body/BodyWeekCards.vue';
 
   export default defineComponent({
     name: 'WeatherBody',
-    components: { WeatherWeekCards, WeatherHighCards, WeatherMeasurement },
+    components: { BodyWeekCards, BodyHighCards, BodyMeasureCards },
   });
 </script>
 
@@ -35,6 +35,7 @@
     background-color: variables.$background-dark-color;
   }
   .footer {
+    margin-bottom: 1rem;
     text-align: center;
   }
 </style>

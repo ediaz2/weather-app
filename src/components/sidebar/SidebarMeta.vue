@@ -35,7 +35,10 @@
       color: variables.$text-inverted-color;
       font-size: variables.$fs-title-xxl;
       font-weight: 600;
-      line-height: 1.2;
+      line-height: 1;
+      @media only screen and (max-width: 768px) {
+        padding: 3rem 0;
+      }
       & span:nth-last-child(1) {
         padding-left: 0.3rem;
         color: variables.$text-muted-color;
@@ -46,6 +49,9 @@
     &-time {
       padding: 5rem 0;
       font-size: variables.$fs-title-m;
+      @media only screen and (max-width: 768px) {
+        padding: 3rem 0;
+      }
     }
     &-footer {
       display: flex;

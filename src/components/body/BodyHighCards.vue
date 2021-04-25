@@ -48,7 +48,7 @@
   import Container from '@/components/ui/objects/Container.vue';
 
   export default defineComponent({
-    name: 'WeatherHighCards',
+    name: 'BodyHighCards',
     components: { Box, Container, ProgressBar, Pill },
   });
 </script>

@@ -1,8 +1,8 @@
 <template>
   <Box>
-    <h5 class="week__title">{{ info.title }}</h5>
-    <svg-icon class="week__icon" :name="info.icon" />
-    <div class="week__meta">
+    <h5 class="week-title">{{ info.title }}</h5>
+    <svg-icon class="week-icon" :name="info.icon" />
+    <div class="week-meta">
       <span>16 °C</span>
       <span>11 °C</span>
     </div>
@@ -29,19 +29,19 @@
   @use "@/assets/scss/settings/_variables.scss";
 
   .week {
-    &__title {
+    &-title {
       margin: 0.2rem;
       font-size: variables.$fs-lead;
       font-weight: 600;
       line-height: 1.3;
       text-align: center;
     }
-    &__icon {
+    &-icon {
       display: block;
       width: 100%;
       margin: -2.2rem 0 -1rem;
     }
-    &__meta {
+    &-meta {
       display: grid;
       grid-template-columns: 1fr 1fr;
       & span:nth-last-child(1) {

@@ -1,19 +1,19 @@
 <template>
   <div class="wrapper">
     <Sidebar />
-    <WeatherBody />
+    <Body />
   </div>
 </template>
 
 <script lang="ts">
   import { defineComponent } from 'vue';
 
-  import WeatherBody from '@/components/body/WeatherBody.vue';
+  import Body from '@/components/body/Body.vue';
   import Sidebar from '@/components/sidebar/Sidebar.vue';
 
   export default defineComponent({
     name: 'App',
-    components: { Sidebar, WeatherBody },
+    components: { Sidebar, Body },
   });
 </script>
 

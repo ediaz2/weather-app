@@ -14,7 +14,7 @@
   import Container from '@/components/ui/objects/Container.vue';
 
   export default defineComponent({
-    name: 'WeatherMeasurement',
+    name: 'BodyMeasureCards',
     components: { Container, Pill },
   });
 </script>
