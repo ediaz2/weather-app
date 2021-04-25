@@ -23,7 +23,7 @@
   .icon {
     &-wrapper svg {
       width: 100%;
-      height: 14rem;
+      height: 16rem;
     }
     &-background {
       position: relative;

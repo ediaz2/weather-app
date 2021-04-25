@@ -12,6 +12,7 @@ $_fs-33: 33 / $fs-base + rem;
 $_fs-44: 44 / $fs-base + rem;
 $_fs-55: 55 / $fs-base + rem;
 $_fs-66: 66 / $fs-base + rem;
+$_fs-160: 160 / $fs-base + rem;
 
 // Typography applications
 $fs-pill: $_fs-9;
@@ -22,3 +23,4 @@ $fs-title-s: $_fs-25;
 $fs-title-m: $_fs-33;
 $fs-title-l: $_fs-44;
 $fs-title-xl: $_fs-66;
+$fs-title-xxl: $_fs-160;

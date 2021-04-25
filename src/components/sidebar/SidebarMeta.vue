@@ -1,7 +1,12 @@
 <template>
   <Container>
-    <div class="icon-wrapper">
-      <svg-icon name="partlyCloudyDayRain"></svg-icon>
+    <div class="meta-wrapper">
+      <div class="meta-info"><span>15</span><span>°C</span></div>
+      <div class="meta-time">Shower</div>
+      <div>Today . Fri, 5 Jun</div>
+      <div class="meta-footer">
+        <svg-icon name="nearMe" /><span>Helsinki</span>
+      </div>
     </div>
   </Container>
 </template>
@@ -20,26 +25,37 @@
 <style lang="scss" scoped>
   @use "@/assets/scss/settings/_variables.scss";
 
-  .icon {
-    &-wrapper svg {
-      width: 100%;
-      height: 14rem;
+  .meta {
+    &-wrapper {
+      color: variables.$text-muted-color;
+      text-align: center;
     }
-    &-background {
-      position: relative;
+    &-info {
+      margin: 0.2rem;
+      color: variables.$text-inverted-color;
+      font-size: variables.$fs-title-xxl;
+      font-weight: 600;
+      line-height: 1.2;
+      & span:nth-last-child(1) {
+        padding-left: 0.3rem;
+        color: variables.$text-muted-color;
+        font-size: variables.$fs-title-l;
+        font-weight: 400;
+      }
     }
-    &-background::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      opacity: 0.1;
-      background-image: url('@/assets/img/cloud-background.png');
-      background-repeat: no-repeat;
-      background-position: top;
-      background-size: cover;
+    &-time {
+      padding: 5rem 0;
+      font-size: variables.$fs-title-m;
+    }
+    &-footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg {
+        width: 1rem;
+        height: 1rem;
+        fill: variables.$text-muted-color;
+      }
     }
   }
 </style>

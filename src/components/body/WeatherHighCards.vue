@@ -3,34 +3,34 @@
     <h2>Today's Highlights</h2>
     <div class="high-wrapper">
       <Box>
-        <h5 class="high_title">Wind Status</h5>
-        <div class="high_info">
+        <h5 class="high-title">Wind Status</h5>
+        <div class="high-info">
           <span>7</span>
           <span>mph</span>
         </div>
-        <div class="high_icon_container">
+        <div class="high-icon-container">
           <Pill sm> <svg-icon name="nearMe" /></Pill>
           <span>WSW</span>
         </div>
       </Box>
       <Box>
-        <h5 class="high_title">Humidity</h5>
-        <div class="high_info">
+        <h5 class="high-title">Humidity</h5>
+        <div class="high-info">
           <span>84</span>
           <span>%</span>
         </div>
         <ProgressBar :value="80" />
       </Box>
       <Box>
-        <h5 class="high_title">Visibility</h5>
-        <div class="high_info">
+        <h5 class="high-title">Visibility</h5>
+        <div class="high-info">
           <span>6,4</span>
           <span>miles</span>
         </div>
       </Box>
       <Box>
-        <h5 class="high_title">Air Pressure</h5>
-        <div class="high_info">
+        <h5 class="high-title">Air Pressure</h5>
+        <div class="high-info">
           <span>998</span>
           <span>mb</span>
         </div>
@@ -59,18 +59,17 @@
   .high {
     &-wrapper {
       display: grid;
-      grid-gap: variables.$spacing;
-      grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
       gap: variables.$spacing * 1.5;
     }
-    &_title {
+    &-title {
       margin: 0.2rem;
       font-size: variables.$fs-lead;
       font-weight: 400;
       line-height: 1.2;
       text-align: center;
     }
-    &_icon_container {
+    &-icon-container {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -84,7 +83,7 @@
         fill: variables.$background-lighter-color;
       }
     }
-    &_info {
+    &-info {
       margin: 0.2rem;
       font-size: variables.$fs-title-xl;
       font-weight: 600;

@@ -14,7 +14,7 @@
   import SidebarSearch from '@/components/sidebar/SidebarSearch.vue';
 
   export default defineComponent({
-    name: 'WeatherSidebar',
+    name: 'Sidebar',
     components: { SidebarSearch, SidebarMeta, SidebarIcon },
   });
 </script>
@@ -23,6 +23,7 @@
   @use "@/assets/scss/settings/_variables.scss";
 
   .weather-sidebar {
+    height: 100vh;
     background: variables.$background-darker-color;
   }
 </style>

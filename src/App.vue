@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <WeatherSidebar />
+    <Sidebar />
     <WeatherBody />
   </div>
 </template>
@@ -9,14 +9,11 @@
   import { defineComponent } from 'vue';
 
   import WeatherBody from '@/components/body/WeatherBody.vue';
-  import WeatherSidebar from '@/components/sidebar/WeatherSidebar.vue';
+  import Sidebar from '@/components/sidebar/Sidebar.vue';
 
   export default defineComponent({
     name: 'App',
-    components: {
-      WeatherSidebar,
-      WeatherBody,
-    },
+    components: { Sidebar, WeatherBody },
   });
 </script>
 
