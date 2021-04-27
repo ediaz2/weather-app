@@ -84,11 +84,11 @@ export interface IConsolidatedWeather {
   weather_state_abbr: WeatherStateAbbreviation;
   wind_direction_compass: WindDirectionCompass;
   created: Date;
-  applicableDate: Date;
+  applicable_date: Date;
   min_temp: number;
   max_temp: number;
   the_temp: number;
-  wind_dpeed: number;
+  wind_speed: number;
   wind_direction: number;
   air_pressure: number;
   humidity: number;

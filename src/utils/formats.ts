@@ -1,10 +1,13 @@
 import dayjs from 'dayjs';
 
-const round = (num: number | null): number | string => {
+const round = (num?: number, dec = 2): number | string => {
   if (!num) return '';
-  return Number(num?.toFixed(1));
+  return Number(num?.toFixed(dec));
 };
 
-const fmDate = (date: string): string => dayjs(date).format('ddd, d MMM');
+const fmDate = (date?: Date): string => {
+  if (!date) return '';
+  return dayjs(date).format('ddd, d MMM');
+};
 
 export { fmDate, round };

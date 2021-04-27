@@ -2,7 +2,7 @@
   <Container>
     <div class="meta-wrapper">
       <div class="meta-info">
-        <span>{{ Math.round(weatherToday?.the_temp) }}</span>
+        <span>{{ round(weatherToday?.the_temp, 0) }}</span>
         <span>°C</span>
       </div>
       <div class="meta-time">{{ weatherToday?.weather_state_name }}</div>
