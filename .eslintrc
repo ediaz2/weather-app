@@ -4,12 +4,16 @@
     "browser": true,
     "es2021": true,
     "node": true
+    // "jest": true
   },
   "extends": [
     "eslint:recommended",
-    "prettier",
+    // "prettier",
     "plugin:vue/vue3-recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier",
     "plugin:jest/recommended",
     "plugin:testing-library/dom",
     "plugin:testing-library/vue"
@@ -18,6 +22,8 @@
   "parserOptions": {
     "ecmaVersion": 2021,
     "parser": "@typescript-eslint/parser",
+    "project": "./tsconfig.json",
+    "extraFileExtensions": [".vue"],
     "sourceType": "module"
   },
   "plugins": [
@@ -35,6 +41,8 @@
     "simple-import-sort/exports": "error",
     "vue/max-attributes-per-line": "off",
     "vue/html-self-closing": "off",
-    "vue/singleline-html-element-content-newline": "off"
+    "vue/singleline-html-element-content-newline": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off"
   }
 }
