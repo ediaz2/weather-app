@@ -5,7 +5,7 @@
       <Box>
         <h5 class="high-title">Wind Status</h5>
         <div class="high-info">
-          <span>7</span>
+          <span>{{ round(weatherToday?.wind_speed) }}</span>
           <span>mph</span>
         </div>
         <div class="high-icon-container">
@@ -16,7 +16,7 @@
       <Box>
         <h5 class="high-title">Humidity</h5>
         <div class="high-info">
-          <span>84</span>
+          <span>{{ weatherToday?.humidity }}</span>
           <span>%</span>
         </div>
         <ProgressBar :value="80" />
@@ -24,14 +24,14 @@
       <Box>
         <h5 class="high-title">Visibility</h5>
         <div class="high-info">
-          <span>6,4</span>
+          <span>{{ round(weatherToday?.visibility) }}</span>
           <span>miles</span>
         </div>
       </Box>
       <Box>
         <h5 class="high-title">Air Pressure</h5>
         <div class="high-info">
-          <span>998</span>
+          <span>{{ weatherToday?.air_pressure }}</span>
           <span>mb</span>
         </div>
       </Box>
@@ -40,16 +40,24 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent } from 'vue';
+  import { defineComponent, ref } from 'vue';
 
   import Box from '@/components/ui/atoms/Box.vue';
   import Pill from '@/components/ui/atoms/Pill.vue';
   import ProgressBar from '@/components/ui/atoms/ProgressBar.vue';
   import Container from '@/components/ui/objects/Container.vue';
+  import { getWeatherToday } from '@/hooks/useWeather';
+  import { round } from '@/utils/formats';
 
   export default defineComponent({
     name: 'BodyHighCards',
     components: { Box, Container, ProgressBar, Pill },
+
+    setup() {
+      const weatherToday = ref(getWeatherToday);
+      const winddirection = `${weatherToday.value?.wind_direction}deg`;
+      return { weatherToday, round, winddirection };
+    },
   });
 </script>
 
@@ -79,7 +87,7 @@
       }
       & svg {
         height: inherit;
-        transform: rotate(180deg);
+        transform: rotate(v-bind(winddirection));
         fill: variables.$background-lighter-color;
       }
     }

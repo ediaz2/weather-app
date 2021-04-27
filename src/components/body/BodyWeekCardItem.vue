@@ -1,10 +1,10 @@
 <template>
   <Box>
-    <h5 class="week-title">{{ info.title }}</h5>
-    <svg-icon class="week-icon" :name="info.icon" />
+    <h5 class="week-title">{{ fmDate(info?.applicable_date) }}</h5>
+    <svg-icon class="week-icon" :name="`weather-${info?.weather_state_abbr}`" />
     <div class="week-meta">
-      <span>16 °C</span>
-      <span>11 °C</span>
+      <span>{{ round(info?.min_temp) }} °C</span>
+      <span>{{ round(info?.max_temp) }} °C</span>
     </div>
   </Box>
 </template>
@@ -13,6 +13,7 @@
   import { defineComponent } from 'vue';
 
   import Box from '@/components/ui/atoms/Box.vue';
+  import { fmDate, round } from '@/utils/formats';
 
   export default defineComponent({
     components: { Box },
@@ -21,6 +22,10 @@
         type: Object,
         required: true,
       },
+    },
+
+    setup() {
+      return { fmDate, round };
     },
   });
 </script>

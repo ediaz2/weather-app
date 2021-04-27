@@ -1,19 +1,27 @@
 <template>
   <Container class="icon-background">
     <div class="icon-wrapper">
-      <svg-icon name="partlyCloudyDayRain"></svg-icon>
+      <svg-icon
+        :name="`weather-${weatherToday?.weather_state_abbr}`"
+      ></svg-icon>
     </div>
   </Container>
 </template>
 
 <script lang="ts">
-  import { defineComponent } from 'vue';
+  import { defineComponent, ref } from 'vue';
 
   import Container from '@/components/ui/objects/Container.vue';
+  import { getWeatherToday } from '@/hooks/useWeather';
 
   export default defineComponent({
     name: 'SidebarIcon',
     components: { Container },
+
+    setup() {
+      const weatherToday = ref(getWeatherToday);
+      return { weatherToday };
+    },
   });
 </script>
 

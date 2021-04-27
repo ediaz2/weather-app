@@ -1,7 +1,10 @@
 <template>
   <Container>
     <div class="search-wrapper">
-      <Button>Search for places</Button>
+      <!--  <Button @click="searchLocations({ query: 'lima' })">
+        Search for places
+      </Button> -->
+      <Button @click="GetByWoeid(44418)"> Search for places </Button>
       <Pill>°C</Pill>
     </div>
   </Container>
@@ -13,10 +16,15 @@
   import Button from '@/components/ui/atoms/Button.vue';
   import Pill from '@/components/ui/atoms/Pill.vue';
   import Container from '@/components/ui/objects/Container.vue';
+  import { GetByWoeid, SearchLocations } from '@/hooks/useWeather';
 
   export default defineComponent({
     name: 'SidebarSearch',
     components: { Container, Pill, Button },
+
+    setup() {
+      return { SearchLocations, GetByWoeid };
+    },
   });
 </script>
 

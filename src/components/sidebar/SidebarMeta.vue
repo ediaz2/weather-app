@@ -1,24 +1,35 @@
 <template>
   <Container>
     <div class="meta-wrapper">
-      <div class="meta-info"><span>15</span><span>°C</span></div>
-      <div class="meta-time">Shower</div>
-      <div>Today . Fri, 5 Jun</div>
+      <div class="meta-info">
+        <span>{{ Math.round(weatherToday?.the_temp) }}</span>
+        <span>°C</span>
+      </div>
+      <div class="meta-time">{{ weatherToday?.weather_state_name }}</div>
+      <div>Today . {{ fmDate(weatherToday?.applicable_date) }}</div>
       <div class="meta-footer">
-        <svg-icon name="nearMe" /><span>Helsinki</span>
+        <svg-icon name="nearMe" /><span>{{ location?.title }}</span>
       </div>
     </div>
   </Container>
 </template>
 
 <script lang="ts">
-  import { defineComponent } from 'vue';
+  import { defineComponent, ref } from 'vue';
 
   import Container from '@/components/ui/objects/Container.vue';
+  import { getLocation, getWeatherToday } from '@/hooks/useWeather';
+  import { fmDate, round } from '@/utils/formats';
 
   export default defineComponent({
     name: 'SidebarMeta',
     components: { Container },
+
+    setup() {
+      const weatherToday = ref(getWeatherToday);
+      const location = ref(getLocation);
+      return { fmDate, round, weatherToday, location };
+    },
   });
 </script>
 
