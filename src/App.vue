@@ -6,14 +6,25 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent } from 'vue';
+  import { defineAsyncComponent, defineComponent, onMounted } from 'vue';
 
-  import Body from '@/components/body/Body.vue';
-  import Sidebar from '@/components/sidebar/Sidebar.vue';
+  import { GetByWoeid } from '@/hooks/useWeather';
 
   export default defineComponent({
     name: 'App',
-    components: { Sidebar, Body },
+    components: {
+      Sidebar: defineAsyncComponent(
+        () => import('@/components/sidebar/Sidebar.vue')
+      ),
+      Body: defineAsyncComponent(() => import('@/components/body/Body.vue')),
+    },
+
+    setup() {
+      onMounted(async () => {
+        // TODO: Load data Weather
+        await GetByWoeid(44418);
+      });
+    },
   });
 </script>
 
