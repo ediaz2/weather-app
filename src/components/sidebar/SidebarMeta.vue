@@ -2,8 +2,8 @@
   <Container>
     <div class="meta-wrapper">
       <div class="meta-info">
-        <span>{{ round(weatherToday?.the_temp, 0) }}</span>
-        <span>°C</span>
+        <span> {{ convertToF(weatherToday?.the_temp, isCelsius, 0) }} </span>
+        <span>{{ isCelsius ? '°C' : '°F' }}</span>
       </div>
       <div class="meta-time">{{ weatherToday?.weather_state_name }}</div>
       <div>Today . {{ fmDate(weatherToday?.applicable_date) }}</div>
@@ -18,8 +18,9 @@
   import { defineComponent, ref } from 'vue';
 
   import Container from '@/components/ui/objects/Container.vue';
+  import { isCelsius } from '@/hooks/useUtils';
   import { getLocation, getWeatherToday } from '@/hooks/useWeather';
-  import { fmDate, round } from '@/utils/formats';
+  import { convertToF, fmDate } from '@/utils/formats';
 
   export default defineComponent({
     name: 'SidebarMeta',
@@ -28,7 +29,7 @@
     setup() {
       const weatherToday = ref(getWeatherToday);
       const location = ref(getLocation);
-      return { fmDate, round, weatherToday, location };
+      return { fmDate, isCelsius, convertToF, weatherToday, location };
     },
   });
 </script>

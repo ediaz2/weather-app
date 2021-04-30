@@ -1,19 +1,28 @@
 <template>
   <Box>
-    <h5 class="week-title">{{ fmDate(info?.applicable_date) }}</h5>
+    <h5 class="week-title">
+      {{ info.index === 0 ? 'Tomorrow' : fmDate(info?.applicable_date) }}
+    </h5>
     <svg-icon class="week-icon" :name="`weather-${info?.weather_state_abbr}`" />
     <div class="week-meta">
-      <span>{{ round(info?.min_temp) }} °C</span>
-      <span>{{ round(info?.max_temp) }} °C</span>
+      <span>
+        {{ convertToF(info?.min_temp, isCelsius) }}
+        {{ isCelsius ? '°C' : '°F' }}
+      </span>
+      <span>
+        {{ convertToF(info?.max_temp, isCelsius) }}
+        {{ isCelsius ? '°C' : '°F' }}
+      </span>
     </div>
   </Box>
 </template>
 
-<script>
+<script lang="ts">
   import { defineComponent } from 'vue';
 
   import Box from '@/components/ui/atoms/Box.vue';
-  import { fmDate, round } from '@/utils/formats';
+  import { isCelsius } from '@/hooks/useUtils';
+  import { convertToF, fmDate } from '@/utils/formats';
 
   export default defineComponent({
     components: { Box },
@@ -25,7 +34,7 @@
     },
 
     setup() {
-      return { fmDate, round };
+      return { isCelsius, convertToF, fmDate };
     },
   });
 </script>

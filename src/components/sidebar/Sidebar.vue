@@ -24,6 +24,6 @@
 
   .weather-sidebar {
     height: 100%;
-    background: variables.$background-darker-color;
+    background-color: variables.$background-darker-color;
   }
 </style>

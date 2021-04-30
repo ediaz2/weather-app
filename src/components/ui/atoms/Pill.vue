@@ -1,5 +1,5 @@
 <template>
-  <span class="pill"><slot /></span>
+  <button class="pill"><slot /></button>
 </template>
 
 <script>
@@ -30,8 +30,18 @@
     width: v-bind(size);
     height: v-bind(size);
     padding: 0.2rem;
+    border: none;
     border-radius: 50%;
     background: variables.$background-light-color;
     color: variables.$text-inverted-color;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+
+    /* &:hover,
+    &:focus {
+      background: variables.$background-lighter-color;
+      color: variables.$primary-dark-color;
+    } */
   }
 </style>
