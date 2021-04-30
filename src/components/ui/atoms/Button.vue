@@ -23,7 +23,8 @@
 
     &:hover,
     &:focus {
-      background: variables.$primary-dark-color;
+      background: variables.$background-lighter-color;
+      color: variables.$primary-dark-color;
     }
   }
 </style>

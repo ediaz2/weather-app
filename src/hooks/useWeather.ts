@@ -31,7 +31,7 @@ const SearchLocations = async (
 const GetByWoeid = async (woeid: number): Promise<IResWeather | undefined> => {
   const endPoint = `/location/${woeid}`;
   const data = await HttpClient<IResWeather>(endPoint, 'GET');
-  setConsolidated(data.parsedBody?.consolidated_weather);
+  setConsolidated(data.parsedBody?.consolidated_weather.slice(1, 6));
   setWeatherToday(data.parsedBody?.consolidated_weather[0]);
   setLocation({
     title: data.parsedBody?.title || '',

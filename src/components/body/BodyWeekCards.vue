@@ -4,7 +4,7 @@
       <BodyWeekCardItem
         v-for="(item, index) in consolidated"
         :key="index"
-        :info="item"
+        :info="{ ...item, index }"
       />
     </div>
   </Container>
@@ -22,7 +22,7 @@
     components: { Container, BodyWeekCardItem },
 
     setup() {
-      const consolidated = ref(getConsolidated); //value?.shift()
+      let consolidated = ref(getConsolidated);
       return { consolidated };
     },
   });
