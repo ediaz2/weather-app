@@ -1,12 +1,12 @@
 import dayjs from 'dayjs';
 
 const convertToF = (
-  value: number,
-  isConvert: boolean,
+  value?: number,
+  isConvert?: boolean,
   dec?: number
 ): number => {
   if (isConvert) return round(value, dec);
-  return round((value * 9) / 5 + 32, dec);
+  return round((Number(value) * 9) / 5 + 32, dec);
 };
 
 const round = (num?: number, dec = 1): number => {

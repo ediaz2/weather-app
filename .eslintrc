@@ -3,12 +3,11 @@
   "env": {
     "browser": true,
     "es2021": true,
-    "node": true
-    // "jest": true
+    "node": true,
+    "jest": true
   },
   "extends": [
     "eslint:recommended",
-    // "prettier",
     "plugin:vue/vue3-recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
