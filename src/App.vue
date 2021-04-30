@@ -1,13 +1,17 @@
 <template>
-  <div class="wrapper">
+  <div v-if="isLoading" class="wrapper-loader">
+    <Loader />
+  </div>
+  <div v-else class="wrapper">
     <Sidebar />
     <Body />
   </div>
 </template>
 
 <script lang="ts">
-  import { defineAsyncComponent, defineComponent, onMounted } from 'vue';
+  import { defineAsyncComponent, defineComponent, onMounted, ref } from 'vue';
 
+  import Loader from '@/components/ui/objects/Loader.vue';
   import { GetByWoeid } from '@/hooks/useWeather';
 
   export default defineComponent({
@@ -17,18 +21,23 @@
         () => import('@/components/sidebar/Sidebar.vue')
       ),
       Body: defineAsyncComponent(() => import('@/components/body/Body.vue')),
+      Loader,
     },
 
     setup() {
+      let isLoading = ref(true);
       onMounted(async () => {
         // TODO: Load data Weather
         await GetByWoeid(44418);
+        isLoading.value = false;
       });
+      return { isLoading };
     },
   });
 </script>
 
 <style lang="scss" scoped>
+  @use "@/assets/scss/settings/_variables.scss";
   .wrapper {
     display: grid;
     grid-template-columns: 24rem 1fr;
@@ -36,6 +45,16 @@
 
     @media only screen and (max-width: 768px) {
       grid-template-columns: 1fr;
+    }
+    &-loader {
+      display: flex;
+      position: absolute;
+      z-index: 2;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      height: 100vh;
+      background-color: variables.$background-darker-color;
     }
   }
 </style>
