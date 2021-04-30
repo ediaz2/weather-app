@@ -19,7 +19,7 @@
           <span>{{ weatherToday?.humidity }}</span>
           <span>%</span>
         </div>
-        <ProgressBar :value="80" />
+        <ProgressBar :value="humidity" />
       </Box>
       <Box>
         <h5 class="high-title">Visibility</h5>
@@ -55,8 +55,10 @@
 
     setup() {
       const weatherToday = ref(getWeatherToday);
-      const winddirection = `${weatherToday.value?.wind_direction}deg`;
-      return { weatherToday, round, winddirection };
+      const winddirection = ref(`${weatherToday.value?.wind_direction}deg`);
+      const humidity = ref(weatherToday.value?.humidity);
+
+      return { weatherToday, round, winddirection, humidity };
     },
   });
 </script>
