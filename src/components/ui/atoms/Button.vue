@@ -1,8 +1,20 @@
 <template>
-  <button class="btn">
+  <button class="btn" :class="{ btn__accent: accent }">
     <slot />
   </button>
 </template>
+
+<script lang="ts">
+  import { defineComponent } from 'vue';
+  export default defineComponent({
+    props: {
+      accent: {
+        type: Boolean,
+        default: false,
+      },
+    },
+  });
+</script>
 
 <style lang="scss" scoped>
   @use "@/assets/scss/settings/_variables.scss";
@@ -20,11 +32,8 @@
     text-align: center;
     text-decoration: none;
     cursor: pointer;
-
-    &:hover,
-    &:focus {
-      background: variables.$background-lighter-color;
-      color: variables.$primary-dark-color;
+    &__accent {
+      background: variables.$background-accent-color;
     }
   }
 </style>

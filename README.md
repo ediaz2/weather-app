@@ -25,8 +25,8 @@ Create a weather app using an API. Use Front-end libraries like React or Vue. Do
 
 ### Fulfill user stories below
 
-- [ ] I can see city weather as default, preferably my current location
-- [ ] I can search for city
+- [x] I can see city weather as default, preferably my current location
+- [x] I can search for city
 - [x] I can see weather of today and the next 5 days
 - [x] I can see the date and location of the weather
 - [x] I can see according to image for each type of weather

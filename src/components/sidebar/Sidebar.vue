@@ -1,6 +1,6 @@
 <template>
   <section class="weather-sidebar">
-    <SidebarSearch />
+    <SidebarHeader />
     <SidebarIcon />
     <SidebarMeta />
   </section>
@@ -9,13 +9,13 @@
 <script lang="ts">
   import { defineComponent } from 'vue';
 
+  import SidebarHeader from '@/components/sidebar/SidebarHeader.vue';
   import SidebarIcon from '@/components/sidebar/SidebarIcon.vue';
   import SidebarMeta from '@/components/sidebar/SidebarMeta.vue';
-  import SidebarSearch from '@/components/sidebar/SidebarSearch.vue';
 
   export default defineComponent({
     name: 'Sidebar',
-    components: { SidebarSearch, SidebarMeta, SidebarIcon },
+    components: { SidebarHeader, SidebarMeta, SidebarIcon },
   });
 </script>
 

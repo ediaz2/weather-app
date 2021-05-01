@@ -3,6 +3,7 @@
     <Loader />
   </div>
   <div v-else class="wrapper">
+    <SidebarSearch v-if="isSidebarSearch" />
     <Sidebar />
     <Body />
   </div>
@@ -12,6 +13,7 @@
   import { defineAsyncComponent, defineComponent, onMounted, ref } from 'vue';
 
   import Loader from '@/components/ui/objects/Loader.vue';
+  import { isSidebarSearch } from '@/hooks/useUtils';
   import { GetByWoeid } from '@/hooks/useWeather';
 
   export default defineComponent({
@@ -19,6 +21,9 @@
     components: {
       Sidebar: defineAsyncComponent(
         () => import('@/components/sidebar/Sidebar.vue')
+      ),
+      SidebarSearch: defineAsyncComponent(
+        () => import('@/components/sidebar/SidebarSearch.vue')
       ),
       Body: defineAsyncComponent(() => import('@/components/body/Body.vue')),
       Loader,
@@ -31,7 +36,7 @@
         await GetByWoeid(44418);
         isLoading.value = false;
       });
-      return { isLoading };
+      return { isLoading, isSidebarSearch };
     },
   });
 </script>
@@ -40,6 +45,7 @@
   @use "@/assets/scss/settings/_variables.scss";
   .wrapper {
     display: grid;
+    position: relative;
     grid-template-columns: 24rem 1fr;
     height: 100vh;
 
