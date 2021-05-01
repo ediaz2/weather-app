@@ -2,10 +2,12 @@
   <div class="input">
     <svg-icon name="magnify" />
     <input
+      v-bind="$attrs"
+      type="text"
       :placeholder="placeholder"
       class="input-text"
       :value="modelValue"
-      @input="input"
+      @input="modelInput"
     />
   </div>
 </template>
@@ -15,7 +17,7 @@
   export default defineComponent({
     props: {
       modelValue: {
-        type: [String, Number],
+        type: String,
         default: '',
       },
       placeholder: {
@@ -24,11 +26,12 @@
       },
     },
     emits: ['update:modelValue'],
-    setup(props, { emit }) {
-      function input(e: Event) {
-        emit('update:modelValue', (e.target as HTMLInputElement).value);
-      }
-      return { input };
+
+    setup(_props, { emit }) {
+      const modelInput = (e: Event) => {
+        emit('update:modelValue', (e.target as HTMLInputElement)?.value);
+      };
+      return { modelInput };
     },
   });
 </script>
