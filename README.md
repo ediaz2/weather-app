@@ -1,27 +1,58 @@
-# Vue 3 + Typescript + Vite
+<div align="center">
+  <h1>Weather APP</h1>
+  <b>Vue 3 + Typescript + Vite</b>
+  <p>Challenge weather app from <a href="http://devchallenges.io">devchallenges.io</a></p>
+</div>
 
-This template should help get you started developing with Vue 3 and Typescript in Vite.
+<div align="center">
 
-## Recommended IDE Setup
+[**DEMO**](https://diaz268.github.io/weather-app/) **|**
+[**CHALLENGE**](https://devchallenges.io/challenges/mM1UIenRhK808W8qmLWv)
 
-[VSCode](https://code.visualstudio.com/) + [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur). Make sure to enable `vetur.experimental.templateInterpolationService` in settings!
+</div>
 
-### If Using `<script setup>`
+![screenshot](./public/banner.jpg)
 
-[`<script setup>`](https://github.com/vuejs/rfcs/pull/227) is a feature that is currently in RFC stage. To get proper IDE support for the syntax, use [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) instead of Vetur (and disable Vetur).
+## Table of Contents
 
-## Type Support For `.vue` Imports in TS
+- [User Story](#user-story)
+- [How To Use](#how-to-use)
+- [Acknowledgements](#acknowledgements)
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can use the following:
+## User Story
 
-### If Using Volar
+Create a weather app using an API. Use Front-end libraries like React or Vue. Don’t look at the existing solution.
 
-Run `Volar: Switch TS Plugin on/off` from VSCode command palette.
+### Fulfill user stories below
 
-### If Using Vetur
+- [ ] I can see city weather as default, preferably my current location
+- [ ] I can search for city
+- [x] I can see weather of today and the next 5 days
+- [x] I can see the date and location of the weather
+- [x] I can see according to image for each type of weather
+- [x] I can see the min and max degree each day
+- [x] I can see wind status and wind direction
+- [x] I can see humidity percentage
+- [x] I can see a visibility indicator
+- [x] I can see the air pressure number
+- [ ] I can request my current location weather
+- [x] I can convert temperature in Celcius to Fahrenheit and vice versa
 
-1. Install and add `@vuedx/typescript-plugin-vue` to the [plugins section](https://www.typescriptlang.org/tsconfig#plugins) in `tsconfig.json`
-2. Delete `src/shims-vue.d.ts` as it is no longer needed to provide module info to Typescript
-3. Open `src/main.ts` in VSCode
-4. Open the VSCode command palette
-5. Search and run "Select TypeScript version" -> "Use workspace version"
+## How To Use
+
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+
+```bash
+# Clone this repository
+$ git clone https://github.com/diaz268/weather-app.git
+
+# Install dependencies
+$ npm install
+
+# Run the app
+$ npm run dev
+```
+
+## Acknowledgements
+
+- [Meteocons](https://bas.dev/projects/weather-icons)

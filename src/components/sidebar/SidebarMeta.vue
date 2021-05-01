@@ -55,7 +55,7 @@
         padding-left: 0.3rem;
         color: variables.$text-muted-color;
         font-size: variables.$fs-title-l;
-        font-weight: 400;
+        font-weight: 500;
       }
     }
     &-time {

@@ -8,7 +8,7 @@
   @use "@/assets/scss/settings/_variables.scss";
 
   .a-box {
-    padding: 1rem 1.6rem;
+    padding: 1rem 1.4rem;
     background: variables.$background-darker-color;
   }
 </style>

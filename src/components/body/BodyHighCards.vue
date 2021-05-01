@@ -75,7 +75,7 @@
     &-title {
       margin: 0.2rem;
       font-size: variables.$fs-lead;
-      font-weight: 400;
+      font-weight: 500;
       line-height: 1.2;
       text-align: center;
     }
@@ -102,7 +102,7 @@
       & span:nth-last-child(1) {
         padding-left: 0.3rem;
         font-size: variables.$fs-title-m;
-        font-weight: 400;
+        font-weight: 500;
       }
     }
   }
