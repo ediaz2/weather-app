@@ -3,7 +3,11 @@
     <h5 class="week-title">
       {{ info.index === 0 ? 'Tomorrow' : fmDate(info?.applicable_date) }}
     </h5>
-    <svg-icon class="week-icon" :name="`weather-${info?.weather_state_abbr}`" />
+    <svg-icon
+      class="week-icon"
+      :name="`weather-${info?.weather_state_abbr}`"
+      size="100"
+    />
     <div class="week-meta">
       <span>
         {{ convertToF(info?.min_temp, isCelsius) }}
@@ -53,7 +57,6 @@
     &-icon {
       display: block;
       width: 100%;
-      margin: -2.2rem 0 -1rem;
     }
     &-meta {
       display: grid;

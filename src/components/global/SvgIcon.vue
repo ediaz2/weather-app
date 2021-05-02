@@ -1,5 +1,5 @@
 <template>
-  <svg :class="$attrs.class" aria-hidden="true">
+  <svg :class="$attrs.class" aria-hidden="true" :width="size" :height="size">
     <use :xlink:href="symbolId" />
   </svg>
 </template>
@@ -17,6 +17,10 @@
       name: {
         type: String,
         required: true,
+      },
+      size: {
+        type: [String, Number],
+        default: 24,
       },
     },
     setup(props) {

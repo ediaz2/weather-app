@@ -8,7 +8,7 @@
       <div class="meta-time">{{ weatherToday?.weather_state_name }}</div>
       <div>Today . {{ fmDate(weatherToday?.applicable_date) }}</div>
       <div class="meta-footer">
-        <svg-icon name="nearMe" /><span>{{ location?.title }}</span>
+        <svg-icon name="mapMarker" /><span>{{ location?.title }}</span>
       </div>
     </div>
   </Container>
