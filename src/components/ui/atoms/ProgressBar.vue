@@ -11,7 +11,7 @@
 </template>
 
 <script>
-  import { defineComponent } from 'vue';
+  import { computed, defineComponent } from 'vue';
 
   export default defineComponent({
     props: {
@@ -21,7 +21,7 @@
       },
     },
     setup(props) {
-      const percentage = `${props.value}%`;
+      const percentage = computed(() => `${props.value}%`);
       return { percentage };
     },
   });

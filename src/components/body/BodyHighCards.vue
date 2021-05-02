@@ -40,7 +40,7 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent, ref } from 'vue';
+  import { defineComponent, ref, watch } from 'vue';
 
   import Box from '@/components/ui/atoms/Box.vue';
   import Pill from '@/components/ui/atoms/Pill.vue';
@@ -57,6 +57,11 @@
       const weatherToday = ref(getWeatherToday);
       const winddirection = ref(`${weatherToday.value?.wind_direction}deg`);
       const humidity = ref(weatherToday.value?.humidity);
+
+      watch(weatherToday, () => {
+        winddirection.value = `${weatherToday.value?.wind_direction}deg`;
+        humidity.value = weatherToday.value?.humidity;
+      });
 
       return { weatherToday, round, winddirection, humidity };
     },
@@ -88,9 +93,7 @@
         padding-left: 0.3rem;
       }
       & svg {
-        height: inherit;
         transform: rotate(v-bind(winddirection));
-        fill: variables.$background-lighter-color;
       }
     }
     &-info {
