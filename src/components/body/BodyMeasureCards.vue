@@ -49,8 +49,4 @@
       color: variables.$primary-dark-color;
     }
   }
-
-  .sss {
-    background: red;
-  }
 </style>

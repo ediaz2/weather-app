@@ -2,7 +2,9 @@
   <section class="search-container">
     <Container>
       <div class="search-header">
-        <Pill @click.prevent="isSidebarSearch = false">x</Pill>
+        <Pill transparent @click.prevent="isSidebarSearch = false">
+          <svg-icon name="close" />
+        </Pill>
       </div>
     </Container>
     <Container>
@@ -16,12 +18,14 @@
       </div>
     </Container>
     <Container>
-      <SidebarSearchItem
-        v-for="(item, index) in getLocations"
-        :key="index"
-        :name="item.title"
-        @search="searchItem(item.woeid)"
-      />
+      <div class="result-container">
+        <SidebarSearchItem
+          v-for="(item, index) in getLocations"
+          :key="index"
+          :name="item.title"
+          @search="searchItem(item.woeid)"
+        />
+      </div>
     </Container>
   </section>
 </template>
@@ -34,7 +38,7 @@
   import InputText from '@/components/ui/atoms/InputText.vue';
   import Pill from '@/components/ui/atoms/Pill.vue';
   import Container from '@/components/ui/objects/Container.vue';
-  import { isSidebarSearch } from '@/hooks/useUtils';
+  import { isLoading, isSidebarSearch } from '@/hooks/useUtils';
   import {
     GetByWoeid,
     getLocations,
@@ -55,9 +59,11 @@
       };
 
       const searchItem = async (woeid: number) => {
+        isLoading.value = true;
         await GetByWoeid(woeid);
         if (getLocations.value) getLocations.value.length = 0;
         isSidebarSearch.value = false;
+        isLoading.value = false;
       };
       return { search, searchInput, searchItem, getLocations, isSidebarSearch };
     },
@@ -88,6 +94,27 @@
     &-input {
       display: flex;
       justify-content: space-between;
+    }
+  }
+
+  .result-container {
+    height: 75vh;
+    overflow-y: auto;
+    @media only screen and (max-width: 768px) {
+      height: 60vh;
+    }
+
+    &::-webkit-scrollbar {
+      width: variables.$spacing-padding;
+    }
+    &::-webkit-scrollbar-track {
+      background: #373b51;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #2a2e45;
+      &:hover {
+        background: #24273f;
+      }
     }
   }
 </style>

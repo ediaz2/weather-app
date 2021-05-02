@@ -4,6 +4,7 @@ import { ICoordinates, IGeolocation } from '@/types/geolocation';
 
 // State
 const isCelsius: Ref<boolean> = ref(true);
+const isLoading: Ref<boolean> = ref(false);
 const isSidebarSearch: Ref<boolean> = ref(false);
 
 // Actions
@@ -18,10 +19,14 @@ const getGeolocation = async (): Promise<IGeolocation> => {
   const isSupported = 'navigator' in window && 'geolocation' in navigator;
 
   if (isSupported) {
-    const pos: GeolocationPosition = await getCoords();
-    coords.value = pos.coords;
+    try {
+      const pos: GeolocationPosition = await getCoords();
+      coords.value = pos.coords;
+    } catch (err) {
+      return { coords, isSupported };
+    }
   }
   return { coords, isSupported };
 };
 
-export { getGeolocation, isCelsius, isSidebarSearch };
+export { getGeolocation, isCelsius, isLoading, isSidebarSearch };

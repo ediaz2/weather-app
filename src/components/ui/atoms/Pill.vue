@@ -1,5 +1,7 @@
 <template>
-  <button class="pill"><slot /></button>
+  <button class="pill" :class="{ pill__transparent: transparent }">
+    <slot />
+  </button>
 </template>
 
 <script>
@@ -8,6 +10,10 @@
   export default defineComponent({
     props: {
       sm: {
+        type: Boolean,
+        default: false,
+      },
+      transparent: {
         type: Boolean,
         default: false,
       },
@@ -38,10 +44,8 @@
     text-decoration: none;
     cursor: pointer;
 
-    /* &:hover,
-    &:focus {
-      background: variables.$background-lighter-color;
-      color: variables.$primary-dark-color;
-    } */
+    &__transparent {
+      background: none;
+    }
   }
 </style>

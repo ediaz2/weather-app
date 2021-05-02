@@ -1,9 +1,14 @@
 <template>
-  <div v-if="isLoading" class="wrapper-loader">
+  <div v-if="isLoading" class="progress">
+    <div class="progress-value"></div>
+  </div>
+  <div v-if="isInitLoading" class="wrapper-loader">
     <Loader />
   </div>
   <div v-else class="wrapper">
-    <SidebarSearch v-if="isSidebarSearch" />
+    <transition name="slide-fade">
+      <SidebarSearch v-if="isSidebarSearch" />
+    </transition>
     <Sidebar />
     <Body />
   </div>
@@ -13,7 +18,7 @@
   import { defineAsyncComponent, defineComponent, onMounted, ref } from 'vue';
 
   import Loader from '@/components/ui/objects/Loader.vue';
-  import { getGeolocation, isSidebarSearch } from '@/hooks/useUtils';
+  import { getGeolocation, isLoading, isSidebarSearch } from '@/hooks/useUtils';
   import {
     GetByWoeid,
     getLocations,
@@ -34,7 +39,7 @@
     },
 
     setup() {
-      let isLoading = ref(true);
+      const isInitLoading = ref(true);
       onMounted(async () => {
         const { coords } = await getGeolocation();
 
@@ -44,16 +49,16 @@
           })
         );
 
-        if (getLocations.value) {
+        if (getLocations.value && coords.value.latitude !== 0) {
           await GetByWoeid(getLocations.value[0].woeid);
           getLocations.value.length = 0;
         } else {
           await GetByWoeid(44418);
         }
 
-        isLoading.value = false;
+        isInitLoading.value = false;
       });
-      return { isLoading, isSidebarSearch };
+      return { isLoading, isInitLoading, isSidebarSearch };
     },
   });
 </script>
@@ -78,6 +83,45 @@
       width: 100vw;
       height: 100vh;
       background-color: variables.$background-darker-color;
+    }
+  }
+
+  .slide-fade-enter-active {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .slide-fade-leave-active {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .slide-fade-enter-from,
+  .slide-fade-leave-to {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+
+  .progress {
+    width: 100%;
+    height: 0.4rem;
+    background: variables.$background-lighter-color;
+    &-value {
+      width: 1%;
+      height: 100%;
+      transform: scaleX(10);
+      transform-origin: left;
+      animation: anim 1s ease-in-out;
+      animation-iteration-count: infinite;
+      background: variables.$background-progress-color;
+    }
+  }
+
+  @keyframes anim {
+    0% {
+      transform: scaleX(0);
+    }
+
+    100% {
+      transform: scaleX(100);
     }
   }
 </style>

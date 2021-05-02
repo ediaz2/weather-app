@@ -46,6 +46,7 @@
     padding: variables.$spacing-padding;
     border: 1px variables.$text-muted-color solid;
     &-text {
+      width: inherit;
       height: 100%;
       padding-left: variables.$spacing-padding;
       border: none;

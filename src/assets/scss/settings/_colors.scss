@@ -1,12 +1,12 @@
 // Colors palette
-$_blue: #1e213a;
-$_blue-accent: #3c47e9;
-$_blue-gray: #a09fb1;
-$_blue-dark: #100e1d;
-$_gray: #6e707a;
-$_gray-lighter: #e7e7eb;
-$_white: #fff;
-$_yellow: #ffec65;
+$_blue: hsl(234, 32%, 17%);
+$_blue-accent: hsl(236, 80%, 57%);
+$_blue-gray: hsl(243, 10%, 66%);
+$_blue-dark: hsl(248, 35%, 8%);
+$_gray: hsl(230, 5%, 45%);
+$_gray-lighter: hsl(240, 9%, 91%);
+$_white: hsl(0, 0%, 100%);
+$_yellow: hsl(50, 100%, 70%);
 
 // Colors applications
 $primary-color: $_blue;

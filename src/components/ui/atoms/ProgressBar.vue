@@ -42,7 +42,7 @@
     }
     &-value {
       width: v-bind(percentage);
-      height: 0.6rem;
+      height: 100%;
       border-radius: 0.3rem;
       background: variables.$background-progress-color;
     }
