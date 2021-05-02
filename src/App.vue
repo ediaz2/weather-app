@@ -13,8 +13,12 @@
   import { defineAsyncComponent, defineComponent, onMounted, ref } from 'vue';
 
   import Loader from '@/components/ui/objects/Loader.vue';
-  import { isSidebarSearch } from '@/hooks/useUtils';
-  import { GetByWoeid } from '@/hooks/useWeather';
+  import { getGeolocation, isSidebarSearch } from '@/hooks/useUtils';
+  import {
+    GetByWoeid,
+    getLocations,
+    SearchLocations,
+  } from '@/hooks/useWeather';
 
   export default defineComponent({
     name: 'App',
@@ -32,8 +36,21 @@
     setup() {
       let isLoading = ref(true);
       onMounted(async () => {
-        // TODO: Load data Weather
-        await GetByWoeid(44418);
+        const { coords } = await getGeolocation();
+
+        await SearchLocations(
+          new URLSearchParams({
+            lattlong: `${coords.value.latitude},${coords.value.longitude}`,
+          })
+        );
+
+        if (getLocations.value) {
+          await GetByWoeid(getLocations.value[0].woeid);
+          getLocations.value.length = 0;
+        } else {
+          await GetByWoeid(44418);
+        }
+
         isLoading.value = false;
       });
       return { isLoading, isSidebarSearch };

@@ -45,11 +45,6 @@
     width: 100%;
     padding: variables.$spacing-padding;
     border: 1px variables.$text-muted-color solid;
-    & svg {
-      width: 1.5rem;
-      height: 1.5rem;
-      fill: variables.$text-muted-color;
-    }
     &-text {
       height: 100%;
       padding-left: variables.$spacing-padding;

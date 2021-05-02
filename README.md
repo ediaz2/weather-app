@@ -35,7 +35,7 @@ Create a weather app using an API. Use Front-end libraries like React or Vue. Do
 - [x] I can see humidity percentage
 - [x] I can see a visibility indicator
 - [x] I can see the air pressure number
-- [ ] I can request my current location weather
+- [x] I can request my current location weather
 - [x] I can convert temperature in Celcius to Fahrenheit and vice versa
 
 ## How To Use

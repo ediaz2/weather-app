@@ -56,6 +56,7 @@
 
       const searchItem = async (woeid: number) => {
         await GetByWoeid(woeid);
+        if (getLocations.value) getLocations.value.length = 0;
         isSidebarSearch.value = false;
       };
       return { search, searchInput, searchItem, getLocations, isSidebarSearch };
@@ -76,6 +77,9 @@
       width: 24rem;
       height: 100%;
       background-color: variables.$background-darker-color;
+      @media only screen and (max-width: 768px) {
+        width: 100%;
+      }
     }
     &-header {
       display: flex;

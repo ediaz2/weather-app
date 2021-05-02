@@ -1,10 +1,8 @@
 <template>
   <Container>
     <div class="search-wrapper">
-      <Button @click.prevent="isSidebarSearch = true">
-        Search for places
-      </Button>
-      <Pill>{{ isCelsius ? '°C' : '°F' }}</Pill>
+      <Button @click.stop="isSidebarSearch = true"> Search for places </Button>
+      <Pill @click.stop="setLocation"><svg-icon name="crosshairsGps" /></Pill>
     </div>
   </Container>
 </template>
@@ -15,15 +13,34 @@
   import Button from '@/components/ui/atoms/Button.vue';
   import Pill from '@/components/ui/atoms/Pill.vue';
   import Container from '@/components/ui/objects/Container.vue';
-  import { isCelsius } from '@/hooks/useUtils';
-  import { isSidebarSearch } from '@/hooks/useUtils';
+  import { getGeolocation, isSidebarSearch } from '@/hooks/useUtils';
+  import {
+    GetByWoeid,
+    getLocations,
+    SearchLocations,
+  } from '@/hooks/useWeather';
 
   export default defineComponent({
     name: 'SidebarSearch',
     components: { Container, Pill, Button },
 
     setup() {
-      return { isSidebarSearch, isCelsius };
+      const setLocation = async () => {
+        const { coords } = await getGeolocation();
+
+        await SearchLocations(
+          new URLSearchParams({
+            lattlong: `${coords.value.latitude},${coords.value.longitude}`,
+          })
+        );
+
+        if (getLocations.value) {
+          await GetByWoeid(getLocations.value[0].woeid);
+          getLocations.value.length = 0;
+        }
+      };
+
+      return { isSidebarSearch, setLocation };
     },
   });
 </script>

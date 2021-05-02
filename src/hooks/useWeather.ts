@@ -5,10 +5,10 @@ import { IConsolidatedWeather } from '@/types/weather';
 import { HttpClient } from '@/utils/HttpClient';
 
 // State
-const location: Ref<IResLocation | undefined> = ref(undefined);
-const locations: Ref<IResLocation[] | undefined> = ref(undefined);
-const consolidated: Ref<IConsolidatedWeather[] | undefined> = ref(undefined);
-const weatherToday: Ref<IConsolidatedWeather | undefined> = ref(undefined);
+const location: Ref<IResLocation | undefined> = ref();
+const locations: Ref<IResLocation[] | undefined> = ref();
+const consolidated: Ref<IConsolidatedWeather[] | undefined> = ref();
+const weatherToday: Ref<IConsolidatedWeather | undefined> = ref();
 
 // Mutations
 const setLocation = (payload?: IResLocation) => (location.value = payload);
