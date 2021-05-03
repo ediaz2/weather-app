@@ -18,12 +18,12 @@ export default defineConfig({
       strategies: 'generateSW',
       manifest: {
         name: 'Weather APP',
-        short_name: 'weather-app',
+        short_name: 'Weather APP',
         description: 'Basic app to view meteorological data by location',
         theme_color: '#0f0d1c',
         background_color: '#0f0d1c',
         display: 'standalone',
-        scope: '/',
+        lang: 'en-US',
         start_url: '/weather-app/',
         icons: [
           {
