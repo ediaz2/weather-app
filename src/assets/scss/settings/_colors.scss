@@ -1,9 +1,9 @@
 // Colors palette
 $_blue: hsl(234, 32%, 17%);
 $_blue-accent: hsl(236, 80%, 57%);
-$_blue-gray: hsl(243, 10%, 66%);
+$_blue-gray: #575766;
 $_blue-dark: hsl(248, 35%, 8%);
-$_gray: hsl(230, 5%, 45%);
+$_gray: hsl(228, 4%, 53%);
 $_gray-lighter: hsl(240, 9%, 91%);
 $_white: hsl(0, 0%, 100%);
 $_yellow: hsl(50, 100%, 70%);
@@ -20,5 +20,5 @@ $background-lighter-color: $_white;
 $background-progress-color: $_yellow;
 
 $text-color: $_gray-lighter;
-$text-muted-color: $_blue-gray;
+$text-muted-color: $_gray;
 $text-inverted-color: $_white;

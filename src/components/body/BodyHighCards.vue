@@ -3,35 +3,35 @@
     <h2>Today's Highlights</h2>
     <div class="high-wrapper">
       <Box>
-        <h5 class="high-title">Wind Status</h5>
+        <h3 class="high-title">Wind Status</h3>
         <div class="high-info">
           <span>{{ round(weatherToday?.wind_speed) }}</span>
           <span>mph</span>
         </div>
         <div class="high-icon-container">
-          <Pill sm> <svg-icon name="nearMe" /></Pill>
+          <Pill tag="span" sm> <svg-icon name="nearMe" /></Pill>
           <span>WSW</span>
         </div>
       </Box>
       <Box>
-        <h5 class="high-title">Humidity</h5>
+        <h3 class="high-title">Humidity</h3>
         <div class="high-info">
-          <span>{{ weatherToday?.humidity }}</span>
+          <span>{{ round(weatherToday?.humidity) }}</span>
           <span>%</span>
         </div>
         <ProgressBar :value="humidity" />
       </Box>
       <Box>
-        <h5 class="high-title">Visibility</h5>
+        <h3 class="high-title">Visibility</h3>
         <div class="high-info">
           <span>{{ round(weatherToday?.visibility) }}</span>
           <span>miles</span>
         </div>
       </Box>
       <Box>
-        <h5 class="high-title">Air Pressure</h5>
+        <h3 class="high-title">Air Pressure</h3>
         <div class="high-info">
-          <span>{{ weatherToday?.air_pressure }}</span>
+          <span>{{ round(weatherToday?.air_pressure) }}</span>
           <span>mb</span>
         </div>
       </Box>
@@ -91,6 +91,7 @@
       padding-top: 1rem;
       & span {
         padding-left: 0.3rem;
+        cursor: auto;
       }
       & svg {
         transform: rotate(v-bind(winddirection));

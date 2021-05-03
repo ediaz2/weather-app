@@ -1,8 +1,15 @@
 <template>
   <Container>
     <div class="search-wrapper">
-      <Button @click.stop="isSidebarSearch = true"> Search for places </Button>
-      <Pill @click.stop="setLocation"><svg-icon name="crosshairsGps" /></Pill>
+      <Button
+        aria-label="show info of your location"
+        @click.stop="isSidebarSearch = true"
+      >
+        Search for places
+      </Button>
+      <Pill aria-label="show info of your location" @click.stop="setLocation">
+        <svg-icon name="crosshairsGps" />
+      </Pill>
     </div>
   </Container>
 </template>

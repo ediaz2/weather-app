@@ -1,7 +1,7 @@
 <template>
-  <button class="pill" :class="{ pill__transparent: transparent }">
+  <component :is="tag" class="pill" :class="{ pill__transparent: transparent }">
     <slot />
-  </button>
+  </component>
 </template>
 
 <script>
@@ -16,6 +16,10 @@
       transparent: {
         type: Boolean,
         default: false,
+      },
+      tag: {
+        type: String,
+        default: 'button',
       },
     },
 

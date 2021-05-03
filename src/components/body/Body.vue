@@ -6,7 +6,11 @@
     <div class="footer">
       <span>
         created by
-        <a href="https://github.com/diaz268/weather-app" target="_blank">
+        <a
+          href="https://github.com/diaz268/weather-app"
+          rel="noopener"
+          target="_blank"
+        >
           @diaz268
         </a>
         - devChallenges.io

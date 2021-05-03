@@ -17,7 +17,7 @@
     props: {
       value: {
         type: Number,
-        default: 20,
+        default: 0,
       },
     },
     setup(props) {

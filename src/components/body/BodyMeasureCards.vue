@@ -1,10 +1,18 @@
 <template>
   <Container>
     <div class="measure-wrapper">
-      <Pill :class="{ measure__active: isCelsius }" @click="setCelsius">
+      <Pill
+        aria-label="convert to degrees celsius"
+        :class="{ measure__active: isCelsius }"
+        @click="setCelsius"
+      >
         °C
       </Pill>
-      <Pill :class="{ measure__active: !isCelsius }" @click="setFahrenheit">
+      <Pill
+        aria-label="convert to degrees Fahrenheit"
+        :class="{ measure__active: !isCelsius }"
+        @click="setFahrenheit"
+      >
         °F
       </Pill>
     </div>
@@ -23,8 +31,8 @@
     components: { Container, Pill },
 
     setup() {
-      const setCelsius = () => (isCelsius.value = true);
-      const setFahrenheit = () => (isCelsius.value = false);
+      const setCelsius = (): boolean => (isCelsius.value = true);
+      const setFahrenheit = (): boolean => (isCelsius.value = false);
       return { setCelsius, setFahrenheit, isCelsius };
     },
   });

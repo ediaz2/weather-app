@@ -4,7 +4,8 @@
       <BodyWeekCardItem
         v-for="(item, index) in consolidated"
         :key="index"
-        :info="{ ...item, index }"
+        :info="item"
+        :index="index"
       />
     </div>
   </Container>

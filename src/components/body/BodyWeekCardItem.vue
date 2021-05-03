@@ -1,7 +1,7 @@
 <template>
   <Box>
     <h5 class="week-title">
-      {{ info.index === 0 ? 'Tomorrow' : fmDate(info?.applicable_date) }}
+      {{ index === 0 ? 'Tomorrow' : fmDate(info?.applicable_date) }}
     </h5>
     <svg-icon
       class="week-icon"
@@ -22,19 +22,21 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent } from 'vue';
+  import { defineComponent, PropType } from 'vue';
 
   import Box from '@/components/ui/atoms/Box.vue';
   import { isCelsius } from '@/hooks/useUtils';
+  import { IConsolidatedWeather } from '@/types/weather';
   import { convertToF, fmDate } from '@/utils/formats';
 
   export default defineComponent({
     components: { Box },
     props: {
       info: {
-        type: Object,
+        type: Object as PropType<IConsolidatedWeather>,
         required: true,
       },
+      index: { type: Number, default: 0, require: true },
     },
 
     setup() {
