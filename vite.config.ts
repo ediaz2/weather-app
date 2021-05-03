@@ -24,7 +24,7 @@ export default defineConfig({
         background_color: '#0f0d1c',
         display: 'standalone',
         scope: '/',
-        start_url: '/',
+        start_url: '/weather-app/',
         icons: [
           {
             src: 'icons/icon-192x192.png',
