@@ -14,7 +14,7 @@ export default defineConfig({
       symbolId: 'icon-[dir]-[name]',
     }),
     VitePWA({
-      base: process.env.NODE_ENV === 'production' ? '/weather-app/' : './',
+      registerType: 'autoUpdate',
       strategies: 'generateSW',
       manifest: {
         name: 'Weather APP',
