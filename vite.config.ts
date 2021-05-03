@@ -62,5 +62,5 @@ export default defineConfig({
     open: true,
   },
 
-  // base: process.env.NODE_ENV === 'production' ? '/weather-app/' : './',
+  base: process.env.NODE_ENV === 'production' ? '/weather-app/' : './',
 });
