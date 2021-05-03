@@ -1,0 +1,1 @@
+import{e as a,o as e,c as t,m as s,w as o}from"./vendor.ce35f5c1.js";var c=a({props:{accent:{type:Boolean,default:!1}}});const n=o()(((a,o,c,n,r,d)=>(e(),t("button",{class:["btn",{btn__accent:a.accent}]},[s(a.$slots,"default",{},void 0,!0)],2))));c.render=n,c.__scopeId="data-v-a3162e74";export{c as _};
