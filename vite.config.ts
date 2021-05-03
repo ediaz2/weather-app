@@ -4,6 +4,9 @@ import { VitePWA } from 'vite-plugin-pwa';
 import viteSvgIcons from 'vite-plugin-svg-icons';
 
 export default defineConfig({
+  build: {
+    sourcemap: false,
+  },
   plugins: [
     vue(),
     viteSvgIcons({
@@ -11,8 +14,7 @@ export default defineConfig({
       symbolId: 'icon-[dir]-[name]',
     }),
     VitePWA({
-      // registerType: 'autoUpdate',
-      mode: 'development',
+      base: '/',
       strategies: 'generateSW',
       manifest: {
         name: 'Weather APP',
@@ -60,5 +62,5 @@ export default defineConfig({
     open: true,
   },
 
-  base: process.env.NODE_ENV === 'production' ? '/weather-app/' : './',
+  // base: process.env.NODE_ENV === 'production' ? '/weather-app/' : './',
 });
