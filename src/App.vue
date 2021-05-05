@@ -1,7 +1,5 @@
 <template>
-  <div v-if="isLoading" class="progress">
-    <div class="progress-value"></div>
-  </div>
+  <ProgressPage v-if="isLoading" />
   <div v-if="isInitLoading" class="wrapper-loader">
     <Loader />
   </div>
@@ -17,6 +15,7 @@
 <script lang="ts">
   import { defineAsyncComponent, defineComponent, onMounted, ref } from 'vue';
 
+  import ProgressPage from '@/components/ui/atoms/ProgressPage.vue';
   import Loader from '@/components/ui/objects/Loader.vue';
   import { isLoading, isSidebarSearch } from '@/hooks/useUtils';
   import { GetByWoeid } from '@/hooks/useWeather';
@@ -31,6 +30,7 @@
         () => import('@/components/sidebar/SidebarSearch.vue')
       ),
       Body: defineAsyncComponent(() => import('@/components/body/Body.vue')),
+      ProgressPage,
       Loader,
     },
 
@@ -81,30 +81,5 @@
   .slide-fade-leave-to {
     transform: translateX(-20px);
     opacity: 0;
-  }
-
-  .progress {
-    width: 100%;
-    height: 0.4rem;
-    background: variables.$background-lighter-color;
-    &-value {
-      width: 1%;
-      height: 100%;
-      transform: scaleX(10);
-      transform-origin: left;
-      animation: anim 1s ease-in-out;
-      animation-iteration-count: infinite;
-      background: variables.$background-progress-color;
-    }
-  }
-
-  @keyframes anim {
-    0% {
-      transform: scaleX(0);
-    }
-
-    100% {
-      transform: scaleX(100);
-    }
   }
 </style>

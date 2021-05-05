@@ -20,7 +20,11 @@
   import Button from '@/components/ui/atoms/Button.vue';
   import Pill from '@/components/ui/atoms/Pill.vue';
   import Container from '@/components/ui/objects/Container.vue';
-  import { getGeolocation, isSidebarSearch } from '@/hooks/useUtils';
+  import {
+    getGeolocation,
+    isSidebarSearch,
+    setLoading,
+  } from '@/hooks/useUtils';
   import {
     GetByWoeid,
     getLocations,
@@ -33,6 +37,7 @@
 
     setup() {
       const setLocation = async () => {
+        setLoading(true);
         const { coords } = await getGeolocation();
 
         await SearchLocations(
@@ -45,6 +50,7 @@
           await GetByWoeid(getLocations.value[0].woeid);
           getLocations.value.length = 0;
         }
+        setLoading(false);
       };
 
       return { isSidebarSearch, setLocation };

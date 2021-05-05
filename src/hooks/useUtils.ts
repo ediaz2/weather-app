@@ -29,4 +29,6 @@ const getGeolocation = async (): Promise<IGeolocation> => {
   return { coords, isSupported };
 };
 
-export { getGeolocation, isCelsius, isLoading, isSidebarSearch };
+const setLoading = (payload: boolean): boolean => (isLoading.value = payload);
+
+export { getGeolocation, isCelsius, isLoading, isSidebarSearch, setLoading };

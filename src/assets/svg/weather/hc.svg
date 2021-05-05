@@ -6,15 +6,15 @@
   </defs>
   <g clip-path="url(#a)">
     <g>
-      <circle cx="19.22" cy="24.29" r="5.95" fill="#f4a71d"/>
-      <line x1="19" y1="15.67" x2="19" y2="12.5" fill="none" stroke="#f59e0b" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
-      <line x1="19" y1="35.5" x2="19" y2="32.33" fill="none" stroke="#f59e0b" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
-      <line x1="24.89" y1="18.11" x2="27.13" y2="15.87" fill="none" stroke="#f59e0b" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
-      <line x1="10.87" y1="32.13" x2="13.11" y2="29.89" fill="none" stroke="#f59e0b" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
-      <line x1="13.11" y1="18.11" x2="10.87" y2="15.87" fill="none" stroke="#f59e0b" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
-      <line x1="27.13" y1="32.13" x2="24.89" y2="29.89" fill="none" stroke="#f59e0b" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
-      <line x1="10.67" y1="24" x2="7.5" y2="24" fill="none" stroke="#f59e0b" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
-      <line x1="30.5" y1="24" x2="27.33" y2="24" fill="none" stroke="#f59e0b" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+      <circle cx="19.22" cy="24.29" r="5.95" fill="#ffec65"/>
+      <line x1="19" y1="15.67" x2="19" y2="12.5" fill="none" stroke="#ffec65" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+      <line x1="19" y1="35.5" x2="19" y2="32.33" fill="none" stroke="#ffec65" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+      <line x1="24.89" y1="18.11" x2="27.13" y2="15.87" fill="none" stroke="#ffec65" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+      <line x1="10.87" y1="32.13" x2="13.11" y2="29.89" fill="none" stroke="#ffec65" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+      <line x1="13.11" y1="18.11" x2="10.87" y2="15.87" fill="none" stroke="#ffec65" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+      <line x1="27.13" y1="32.13" x2="24.89" y2="29.89" fill="none" stroke="#ffec65" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+      <line x1="10.67" y1="24" x2="7.5" y2="24" fill="none" stroke="#ffec65" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+      <line x1="30.5" y1="24" x2="27.33" y2="24" fill="none" stroke="#ffec65" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
       <animateTransform attributeName="transform" type="rotate" from="0 19.22 24.293" to="360 19.22 24.293" dur="45s" repeatCount="indefinite"/>
     </g>
   </g>

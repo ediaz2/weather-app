@@ -9,7 +9,7 @@
           <span>mph</span>
         </div>
         <div class="high-icon-container">
-          <Pill tag="span" sm> <svg-icon name="nearMe" /></Pill>
+          <Pill tag="span" sm> <svg-icon ref="nearRef" name="nearMe" /></Pill>
           <span>WSW</span>
         </div>
       </Box>
@@ -40,7 +40,7 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent, ref, watch } from 'vue';
+  import { ComponentOptions, defineComponent, Ref, ref, watch } from 'vue';
 
   import Box from '@/components/ui/atoms/Box.vue';
   import Pill from '@/components/ui/atoms/Pill.vue';
@@ -58,12 +58,20 @@
       const winddirection = ref(`${weatherToday.value?.wind_direction}deg`);
       const humidity = ref(weatherToday.value?.humidity);
 
+      const nearRef: Ref<ComponentOptions | null> = ref(null);
+
       watch(weatherToday, () => {
         winddirection.value = `${weatherToday.value?.wind_direction}deg`;
+        if (nearRef.value)
+          (nearRef.value.$el as HTMLElement).classList.add('rotation');
+        setTimeout(() => {
+          if (nearRef.value)
+            (nearRef.value.$el as HTMLElement).classList.remove('rotation');
+        }, 2000);
         humidity.value = weatherToday.value?.humidity;
       });
 
-      return { weatherToday, round, winddirection, humidity };
+      return { weatherToday, round, winddirection, humidity, nearRef };
     },
   });
 </script>
@@ -108,6 +116,19 @@
         font-size: variables.$fs-title-m;
         font-weight: 500;
       }
+    }
+  }
+
+  .rotation {
+    animation: rotation 2s infinite linear;
+  }
+
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(v-bind(winddirection));
     }
   }
 </style>

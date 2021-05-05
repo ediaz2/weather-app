@@ -38,7 +38,7 @@
   import InputText from '@/components/ui/atoms/InputText.vue';
   import Pill from '@/components/ui/atoms/Pill.vue';
   import Container from '@/components/ui/objects/Container.vue';
-  import { isLoading, isSidebarSearch } from '@/hooks/useUtils';
+  import { isSidebarSearch, setLoading } from '@/hooks/useUtils';
   import {
     GetByWoeid,
     getLocations,
@@ -59,11 +59,11 @@
       };
 
       const searchItem = async (woeid: number) => {
-        isLoading.value = true;
+        setLoading(true);
         await GetByWoeid(woeid);
         if (getLocations.value) getLocations.value.length = 0;
         isSidebarSearch.value = false;
-        isLoading.value = false;
+        setLoading(false);
       };
       return { search, searchInput, searchItem, getLocations, isSidebarSearch };
     },
