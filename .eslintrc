@@ -41,7 +41,7 @@
     "vue/max-attributes-per-line": "off",
     "vue/html-self-closing": "off",
     "vue/singleline-html-element-content-newline": "off",
-    "@typescript-eslint/restrict-template-expressions": "off",
+    // "@typescript-eslint/restrict-template-expressions": "off",
     "@typescript-eslint/no-unsafe-assignment": "off"
   }
 }
