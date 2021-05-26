@@ -55,13 +55,15 @@
 
     setup() {
       const weatherToday = ref(getWeatherToday);
-      const winddirection = ref(`${weatherToday.value?.wind_direction}deg`);
+      const winddirection = ref(
+        `${weatherToday.value?.wind_direction || 0}deg`
+      );
       const humidity = ref(weatherToday.value?.humidity);
 
       const nearRef: Ref<ComponentOptions | null> = ref(null);
 
       watch(weatherToday, () => {
-        winddirection.value = `${weatherToday.value?.wind_direction}deg`;
+        winddirection.value = `${weatherToday.value?.wind_direction || 0}deg`;
         if (nearRef.value)
           (nearRef.value.$el as HTMLElement).classList.add('rotation');
         setTimeout(() => {
