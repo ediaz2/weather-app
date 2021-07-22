@@ -7,7 +7,7 @@ interface ICoordinates {
 
 interface IGeolocation {
   coords: Ref<ICoordinates>;
-  isSupported: boolean;
+  isSupported: string;
 }
 
 export { ICoordinates, IGeolocation };
