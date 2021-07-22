@@ -1,7 +1,6 @@
 <div align="center">
   <h1>Weather APP</h1>
   <b>Vue 3 + Typescript + Vite</b>
-  <p>Challenge weather app from <a href="http://devchallenges.io">devchallenges.io</a></p>
 </div>
 
 <div align="center">
