@@ -1,5 +1,5 @@
 import '@/assets/scss/index.scss';
-import 'vite-plugin-svg-icons/register';
+import 'virtual:svg-icons-register';
 
 import { registerSW } from 'virtual:pwa-register';
 import { createApp } from 'vue';

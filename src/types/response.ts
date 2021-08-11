@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { IConsolidatedWeather, ILocation, ISource } from '@/types/weather';
 
 type IResLocation = ILocation;

@@ -1,9 +1,10 @@
+/* eslint-disable no-use-before-define */
 import dayjs from 'dayjs';
 
 const convertToF = (
   value?: number,
   isConvert?: boolean,
-  dec?: number
+  dec?: number,
 ): number => {
   if (isConvert) return round(value, dec);
   return round((Number(value) * 9) / 5 + 32, dec);

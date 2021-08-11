@@ -8,11 +8,10 @@ const isLoading: Ref<boolean> = ref(false);
 const isSidebarSearch: Ref<boolean> = ref(false);
 
 // Actions
-const getCoords = () => {
-  return new Promise<GeolocationPosition>((resolve, reject) => {
+const getCoords = () =>
+  new Promise<GeolocationPosition>((resolve, reject) => {
     navigator.geolocation.getCurrentPosition(resolve, reject);
   });
-};
 
 const getGeolocation = async (): Promise<IGeolocation> => {
   const coords: Ref<ICoordinates> = ref({ latitude: 0, longitude: 0 });
@@ -29,6 +28,7 @@ const getGeolocation = async (): Promise<IGeolocation> => {
   return { coords, isSupported };
 };
 
+// eslint-disable-next-line no-return-assign
 const setLoading = (payload: boolean): boolean => (isLoading.value = payload);
 
 export { getGeolocation, isCelsius, isLoading, isSidebarSearch, setLoading };

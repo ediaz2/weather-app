@@ -20,6 +20,7 @@
 </template>
 
 <script lang="ts">
+  /* eslint-disable no-return-assign */
   import { defineComponent } from 'vue';
 
   import Pill from '@/components/ui/atoms/Pill.vue';

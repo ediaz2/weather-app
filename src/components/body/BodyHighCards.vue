@@ -56,7 +56,7 @@
     setup() {
       const weatherToday = ref(getWeatherToday);
       const winddirection = ref(
-        `${weatherToday.value?.wind_direction || 0}deg`
+        `${weatherToday.value?.wind_direction || 0}deg`,
       );
       const humidity = ref(weatherToday.value?.humidity);
 

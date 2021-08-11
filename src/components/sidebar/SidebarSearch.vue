@@ -50,10 +50,10 @@
     components: { Button, InputText, Container, Pill, SidebarSearchItem },
 
     setup() {
-      let searchInput = ref('');
+      const searchInput = ref('');
       const search = async () => {
         await SearchLocations(
-          new URLSearchParams({ query: searchInput.value })
+          new URLSearchParams({ query: searchInput.value }),
         );
         searchInput.value = '';
       };

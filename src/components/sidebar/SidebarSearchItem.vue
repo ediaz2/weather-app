@@ -20,7 +20,7 @@
     emits: ['search'],
 
     setup() {
-      let searchInput = ref('');
+      const searchInput = ref('');
 
       return { searchInput };
     },

@@ -43,7 +43,7 @@
         await SearchLocations(
           new URLSearchParams({
             lattlong: `${coords.value.latitude},${coords.value.longitude}`,
-          })
+          }),
         );
 
         if (getLocations.value) {

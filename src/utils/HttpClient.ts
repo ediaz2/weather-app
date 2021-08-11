@@ -1,4 +1,4 @@
-const _BASE_URL =
+const BASE_URL =
   'https://ancient-badlands-86035.herokuapp.com/https://www.metaweather.com/api';
 
 interface HttpResponse<T> extends Response {
@@ -13,28 +13,24 @@ const HttpClient = async <T>(
     | string[][]
     | Record<string, string>
     | URLSearchParams
-    | undefined
+    | undefined,
 ): Promise<HttpResponse<T>> => {
-  try {
-    const url = `${_BASE_URL}${endPoint}?${new URLSearchParams(params)}`;
+  // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+  const url = `${BASE_URL}${endPoint}?${new URLSearchParams(params)}`;
 
-    const options: RequestInit = {
-      method,
-      headers: { 'Content-Type': 'application/json' },
-      cache: 'no-cache',
-    };
+  const options: RequestInit = {
+    method,
+    headers: { 'Content-Type': 'application/json' },
+    cache: 'no-cache',
+  };
 
-    const response: HttpResponse<T> = await fetch(url, options);
+  const response: HttpResponse<T> = await fetch(url, options);
 
-    response.parsedBody = await response.json();
+  response.parsedBody = await response.json();
 
-    if (!response.ok) throw new Error(response.statusText);
+  if (!response.ok) throw new Error(response.statusText);
 
-    return response;
-  } catch (err) {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    return err;
-  }
+  return response;
 };
 
-export { HttpClient };
+export { HttpClient as default };

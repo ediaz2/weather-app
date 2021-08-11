@@ -24,10 +24,10 @@
     name: 'App',
     components: {
       Sidebar: defineAsyncComponent(
-        () => import('@/components/sidebar/Sidebar.vue')
+        () => import('@/components/sidebar/Sidebar.vue'),
       ),
       SidebarSearch: defineAsyncComponent(
-        () => import('@/components/sidebar/SidebarSearch.vue')
+        () => import('@/components/sidebar/SidebarSearch.vue'),
       ),
       Body: defineAsyncComponent(() => import('@/components/body/Body.vue')),
       ProgressPage,

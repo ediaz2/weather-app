@@ -1,8 +1,9 @@
+/* eslint-disable no-return-assign */
 import { computed, Ref, ref } from 'vue';
 
 import { IResLocation, IResWeather } from '@/types/response';
 import { IConsolidatedWeather } from '@/types/weather';
-import { HttpClient } from '@/utils/HttpClient';
+import HttpClient from '@/utils/HttpClient';
 
 // State
 const location: Ref<IResLocation | undefined> = ref();
@@ -20,7 +21,7 @@ const setWeatherToday = (payload?: IConsolidatedWeather) =>
 
 // Actions
 const SearchLocations = async (
-  params: URLSearchParams
+  params: URLSearchParams,
 ): Promise<IResLocation[] | undefined> => {
   const endPoint = '/location/search';
   const data = await HttpClient<IResLocation[]>(endPoint, 'GET', params);

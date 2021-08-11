@@ -23,7 +23,7 @@
     components: { Container, BodyWeekCardItem },
 
     setup() {
-      let consolidated = ref(getConsolidated);
+      const consolidated = ref(getConsolidated);
       return { consolidated };
     },
   });
