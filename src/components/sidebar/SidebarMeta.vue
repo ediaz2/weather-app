@@ -35,7 +35,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @use "@/assets/scss/settings/_variables.scss";
+  @use '@/assets/scss/settings/_variables.scss';
 
   .meta {
     &-wrapper {

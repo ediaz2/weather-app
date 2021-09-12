@@ -9,8 +9,7 @@
         <a
           href="https://github.com/diaz268/weather-app"
           rel="noopener"
-          target="_blank"
-        >
+          target="_blank">
           @diaz268
         </a>
         - devChallenges.io
@@ -33,7 +32,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @use "@/assets/scss/settings/_variables.scss";
+  @use '@/assets/scss/settings/_variables.scss';
 
   .weather-body {
     background-color: variables.$background-dark-color;

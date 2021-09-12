@@ -5,7 +5,7 @@
 </template>
 
 <style lang="scss" scoped>
-  @use "@/assets/scss/settings/_variables.scss";
+  @use '@/assets/scss/settings/_variables.scss';
 
   .progress {
     width: 100%;

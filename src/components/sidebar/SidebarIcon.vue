@@ -2,8 +2,7 @@
   <Container class="icon-background">
     <div class="icon-wrapper">
       <svg-icon
-        :name="`weather-${weatherToday?.weather_state_abbr}`"
-      ></svg-icon>
+        :name="`weather-${weatherToday?.weather_state_abbr}`"></svg-icon>
     </div>
   </Container>
 </template>
@@ -26,7 +25,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @use "@/assets/scss/settings/_variables.scss";
+  @use '@/assets/scss/settings/_variables.scss';
 
   .icon {
     &-wrapper svg {

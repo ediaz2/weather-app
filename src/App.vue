@@ -47,7 +47,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @use "@/assets/scss/settings/_variables.scss";
+  @use '@/assets/scss/settings/_variables.scss';
   .wrapper {
     display: grid;
     position: relative;

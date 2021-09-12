@@ -5,8 +5,7 @@
         v-for="(item, index) in consolidated"
         :key="index"
         :info="item"
-        :index="index"
-      />
+        :index="index" />
     </div>
   </Container>
 </template>
@@ -30,7 +29,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @use "@/assets/scss/settings/_variables.scss";
+  @use '@/assets/scss/settings/_variables.scss';
 
   .week-wrapper {
     display: grid;

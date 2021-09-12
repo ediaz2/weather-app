@@ -6,8 +6,7 @@
     <svg-icon
       class="week-icon"
       :name="`weather-${info?.weather_state_abbr}`"
-      size="100"
-    />
+      size="100" />
     <div class="week-meta">
       <span>
         {{ convertToF(info?.min_temp, isCelsius) }}
@@ -46,7 +45,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @use "@/assets/scss/settings/_variables.scss";
+  @use '@/assets/scss/settings/_variables.scss';
 
   .week {
     &-title {

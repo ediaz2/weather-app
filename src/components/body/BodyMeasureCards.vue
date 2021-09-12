@@ -4,15 +4,13 @@
       <Pill
         aria-label="convert to degrees celsius"
         :class="{ measure__active: isCelsius }"
-        @click="setCelsius"
-      >
+        @click="setCelsius">
         °C
       </Pill>
       <Pill
         aria-label="convert to degrees Fahrenheit"
         :class="{ measure__active: !isCelsius }"
-        @click="setFahrenheit"
-      >
+        @click="setFahrenheit">
         °F
       </Pill>
     </div>
@@ -40,7 +38,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @use "@/assets/scss/settings/_variables.scss";
+  @use '@/assets/scss/settings/_variables.scss';
 
   .measure {
     &-wrapper {

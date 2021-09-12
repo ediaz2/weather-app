@@ -7,8 +7,7 @@
       :placeholder="placeholder"
       class="input-text"
       :value="modelValue"
-      @input="modelInput"
-    />
+      @input="modelInput" />
   </div>
 </template>
 
@@ -38,7 +37,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @use "@/assets/scss/settings/_variables.scss";
+  @use '@/assets/scss/settings/_variables.scss';
 
   .input {
     display: flex;

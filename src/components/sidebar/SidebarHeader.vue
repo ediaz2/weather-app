@@ -3,8 +3,7 @@
     <div class="search-wrapper">
       <Button
         aria-label="show info of your location"
-        @click.stop="isSidebarSearch = true"
-      >
+        @click.stop="isSidebarSearch = true">
         Search for places
       </Button>
       <Pill aria-label="show info of your location" @click.stop="setLocation">
@@ -59,7 +58,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @use "@/assets/scss/settings/_variables.scss";
+  @use '@/assets/scss/settings/_variables.scss';
 
   .search {
     &-wrapper {

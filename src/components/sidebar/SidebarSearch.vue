@@ -12,8 +12,7 @@
         <InputText
           v-model="searchInput"
           class="mr"
-          placeholder="search location"
-        />
+          placeholder="search location" />
         <Button accent @click.prevent="search"> Search </Button>
       </div>
     </Container>
@@ -23,8 +22,7 @@
           v-for="(item, index) in getLocations"
           :key="index"
           :name="item.title"
-          @search="searchItem(item.woeid)"
-        />
+          @search="searchItem(item.woeid)" />
       </div>
     </Container>
   </section>
@@ -71,7 +69,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @use "@/assets/scss/settings/_variables.scss";
+  @use '@/assets/scss/settings/_variables.scss';
 
   .mr {
     margin-right: variables.$spacing-padding;
