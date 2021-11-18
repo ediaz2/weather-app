@@ -1,1 +1,0 @@
-import{e as a,o as t,c as e,s,n}from"./vendor.a8b2ba89.js";var o=a({props:{accent:{type:Boolean,default:!1}}});o.render=function(a,o,c,r,d,p){return t(),e("button",{class:n(["btn",{btn__accent:a.accent}])},[s(a.$slots,"default",{},void 0,!0)],2)},o.__scopeId="data-v-3073de30";export{o as _};
