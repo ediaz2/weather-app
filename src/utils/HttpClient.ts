@@ -7,6 +7,7 @@ interface HttpResponse<T> extends Response {
 
 const HttpClient = async <T>(
   endPoint: string,
+  // eslint-disable-next-line default-param-last
   method = 'GET',
   params?:
     | string
@@ -33,4 +34,5 @@ const HttpClient = async <T>(
   return response;
 };
 
+// eslint-disable-next-line no-restricted-exports
 export { HttpClient as default };

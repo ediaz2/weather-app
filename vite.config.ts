@@ -1,5 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import vue from '@vitejs/plugin-vue';
+import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 import viteSvgIcons from 'vite-plugin-svg-icons';
@@ -58,6 +59,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': '/src',
+      '~': resolve(__dirname, '/src'),
     },
   },
   server: {
